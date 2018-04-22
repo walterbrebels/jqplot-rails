@@ -3,7 +3,7 @@
  * Pure JavaScript plotting plugin using jQuery
  *
  * Version: 1.0.9
- * Revision: d96a669
+ * Revision: 3aa69fd
  *
  * Copyright (c) 2009-2016 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -350,8 +350,8 @@
         var shadow = (opts.shadow != undefined) ? opts.shadow : this.shadow;
         var showLine = (opts.showLine != undefined) ? opts.showLine : this.showLine;
         var fill = (opts.fill != undefined) ? opts.fill : this.fill;
-        var cw = ctx.canvas.width;
-        var ch = ctx.canvas.height;
+        var cw =  parseInt(ctx.canvas.style.width);
+        var ch =  parseInt(ctx.canvas.style.height);
         this._bases[0] = cw - loff - roff;
         var ltot = this._length = ch - toff - boff;
 

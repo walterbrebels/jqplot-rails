@@ -3,7 +3,7 @@
  * Pure JavaScript plotting plugin using jQuery
  *
  * Version: 1.0.9
- * Revision: d96a669
+ * Revision: 3aa69fd
  *
  * Copyright (c) 2009-2016 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -327,7 +327,7 @@
             // color = (this.varyBubbleColors) ? this.colorGenerator.get(idx) : this.color;
             color = this.colorGenerator.get(idx);
             
-            // If we're drawing a shadow, expand the canvas dimensions to accomodate.
+            // If we're drawing a shadow, expand the canvas dimensions to accommodate.
             var canvasRadius = gd[2];
             var offset, depth;
             if (this.shadow) {

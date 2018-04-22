@@ -3,7 +3,7 @@
  * Pure JavaScript plotting plugin using jQuery
  *
  * Version: 1.0.9
- * Revision: d96a669
+ * Revision: 3aa69fd
  *
  * Copyright (c) 2009-2016 Chris Leonello
  * jqPlot is currently available for use in all personal or commercial projects 
@@ -396,7 +396,12 @@
             this._thickness = this.thickness || (od - this.innerDiameter - 2.0*ringmargin*this._numberSeries) / this._numberSeries/2.0;
         }
         else {
-            this._thickness = this.thickness || mindim / 2 / (this._numberSeries + 1) * 0.85;
+            // allow use of percentage values for thickness
+            if (this.thickness < 1) {
+                this._thickness = mindim / 2 * this.thickness;
+            } else {
+                this._thickness = this.thickness || mindim / 2 / (this._numberSeries + 1) * 0.85;
+            }
         }
         if (this._diameter < 6) {
             $.jqplot.log("Diameter of donut too small, not rendering.");
